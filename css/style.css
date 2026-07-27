@@ -1087,20 +1087,484 @@ footer p{
 
 }
 
-@media(max-width:900px){
+/*================================
+      RESPONSIVE MÓVIL
+================================*/
 
-    .hero-content{
+@media (max-width: 768px) {
 
-        flex-direction:column;
+    /* NAVBAR */
+    .navbar {
+        position: relative;
+        width: 100%;
+        min-height: 70px;
 
-        text-align:center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 15px 6%;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+    }
+
+    .logo i {
+        font-size: 1.6rem;
+    }
+
+
+    /* BOTÓN HAMBURGUESA */
+    .menu-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+
+    /* OCULTAR BOTÓN MONITOREO DE PC */
+    .btn-monitor {
+        display: none;
+    }
+
+
+    /* MENÚ HAMBURGUESA */
+    .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(8, 32, 16, 0.98);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        padding: 0;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all 0.4s ease;
+    }
+
+
+    /* MENÚ ABIERTO */
+    .nav-links.active {
+        max-height: 500px;
+
+        padding: 15px 0;
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    .nav-links li {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 20px;
+
+        color: white;
+
+        font-size: 1rem;
+    }
+
+
+    .nav-links a:hover {
+        background: rgba(34, 197, 94, 0.2);
+    }
+
+
+    /* BOTÓN MONITOREO DENTRO DEL MENÚ */
+    .nav-links .mobile-monitor {
+        display: block;
+
+        width: 80%;
+
+        margin: 10px auto;
+
+        padding: 12px 20px;
+
+        background: #22c55e;
+
+        border-radius: 50px;
+    }
+
+
+    /*================================
+          HERO EN CELULAR
+    =================================*/
+
+    .hero {
+
+        /* IMPORTANTE:
+           Ya no usamos 100vh */
+        min-height: auto;
+
+        height: auto;
+
+        padding-top: 100px;
+
+        padding-bottom: 50px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    /* CONTENEDOR DEL HERO */
+    .hero-content {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 40px;
+
+        padding: 20px 6%;
+    }
+
+
+    /* TEXTO */
+    .hero-text {
+
+        width: 100%;
+
+        text-align: center;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    /* ETIQUETA */
+    .tag {
+
+        font-size: 0.9rem;
+
+        padding: 8px 18px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* TÍTULO */
+    .hero h1 {
+
+        display: block;
+
+        width: 100%;
+
+        font-size: 2.7rem;
+
+        line-height: 1.1;
+
+        margin-bottom: 20px;
+
+        min-height: auto;
+    }
+
+
+    /* DESCRIPCIÓN */
+    .hero p {
+
+        width: 100%;
+
+        max-width: 500px;
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* BOTONES */
+    .hero-buttons {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        width: 100%;
+
+        max-width: 300px;
+
+        padding: 15px 25px;
+
+        text-align: center;
+    }
+
+
+    /* IMAGEN */
+    .hero-image {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        animation: none;
+    }
+
+
+    .hero-image img {
+
+        width: 100%;
+
+        max-width: 580px;
+
+        height: auto;
+
+        border-radius: 12px;
+    }
+
+
+    /* FLECHA */
+    .scroll {
+
+        position: relative;
+
+        bottom: auto;
+
+        left: auto;
+
+        transform: none;
+
+        margin-top: 20px;
+
+        font-size: 2rem;
+    }
+
+}
+
+
+/*================================
+      CELULARES PEQUEÑOS
+================================*/
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+
+        padding-top: 90px;
+
+        padding-bottom: 30px;
+    }
+
+    .hero-content {
+
+        gap: 30px;
+
+        padding: 15px 5%;
+    }
+
+    .hero h1 {
+
+        font-size: 2.2rem;
 
     }
 
-    .hero-text{
+    .hero p {
 
-        text-align:center;
+        font-size: 0.95rem;
 
+        line-height: 1.6;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+
+        max-width: 280px;
+
+    }
+
+    .hero-image img {
+
+        border-radius: 10px;
+
+    }
+
+}
+
+/*================================
+      MENÚ HAMBURGUESA
+================================*/
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* El botón Monitoreo dentro del menú
+   está oculto en PC */
+.mobile-monitor {
+    display: none;
+}
+
+
+/*================================
+      MENÚ EN CELULARES
+================================*/
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+        flex-direction: row;
+        padding: 15px 6%;
+    }
+
+    /* Mostrar hamburguesa */
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    /* Ocultar botón Monitoreo de PC */
+    .btn-monitor {
+        display: none;
+    }
+
+    /* Menú desplegable */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(8, 32, 16, 0.97);
+        backdrop-filter: blur(15px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        padding: 0;
+
+        max-height: 0;
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            padding 0.3s ease;
+    }
+
+    /* Menú abierto */
+    .nav-links.active {
+        max-height: 500px;
+        padding: 20px 0;
+
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Elementos del menú */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+
+        padding: 15px 20px;
+
+        color: white;
+        font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+        background: rgba(34, 197, 94, 0.2);
+    }
+
+    /* Mostrar Monitoreo dentro del menú */
+    .nav-links .mobile-monitor {
+        display: block;
+
+        width: 80%;
+        margin: 10px auto;
+
+        background: #22c55e;
+        border-radius: 50px;
+    }
+
+    .nav-links .mobile-monitor:hover {
+        background: #16a34a;
     }
 
 }

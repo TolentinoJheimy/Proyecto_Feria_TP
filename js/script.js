@@ -207,3 +207,50 @@ window.addEventListener("scroll", ()=>{
     });
 
 });
+
+//==============================
+// MENÚ HAMBURGUESA
+//==============================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+    // Cambiar icono hamburguesa ↔ X
+    const icon = menuToggle.querySelector("i");
+
+    if (navLinks.classList.contains("active")) {
+
+        icon.classList.remove("bi-list");
+        icon.classList.add("bi-x-lg");
+
+    } else {
+
+        icon.classList.remove("bi-x-lg");
+        icon.classList.add("bi-list");
+
+    }
+
+});
+
+
+// Cerrar menú al hacer clic en un enlace
+const enlacesMenu = document.querySelectorAll(".nav-links a");
+
+enlacesMenu.forEach(enlace => {
+
+    enlace.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        const icon = menuToggle.querySelector("i");
+
+        icon.classList.remove("bi-x-lg");
+        icon.classList.add("bi-list");
+
+    });
+
+});
