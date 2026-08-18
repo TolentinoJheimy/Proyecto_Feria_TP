@@ -52,9 +52,10 @@ header {
     font-weight: 700;
 }
 
-.logo i {
+.logo img {
     color: #5be37d;
-    font-size: 1.8rem;
+    width: 3rem;
+    border-radius:10px ;
 }
 
 .nav-links {
